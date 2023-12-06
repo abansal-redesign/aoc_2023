@@ -21,7 +21,7 @@ class SeedSoilMap:
         for each_line_data in self.data:
             des, src, length = each_line_data[0], each_line_data[1], each_line_data[2]
             for i in range(0, length):
-                self.map[src] = des
+                self.map[src + i] = des + i
 
 class SoilFertilizerMap:
     def __init__(self, data):
@@ -34,7 +34,7 @@ class SoilFertilizerMap:
         for each_line_data in self.data:
             des, src, length = each_line_data[0], each_line_data[1], each_line_data[2]
             for i in range(0, length):
-                self.map[src] = des
+                self.map[src + i] = des + i
 
 class FertilizerWaterMap:
     def __init__(self, data):
@@ -47,7 +47,7 @@ class FertilizerWaterMap:
         for each_line_data in self.data:
             des, src, length = each_line_data[0], each_line_data[1], each_line_data[2]
             for i in range(0, length):
-                self.map[src] = des
+                self.map[src + i] = des + i
 
 class WaterLightMap:
     def __init__(self, data):
@@ -60,7 +60,7 @@ class WaterLightMap:
         for each_line_data in self.data:
             des, src, length = each_line_data[0], each_line_data[1], each_line_data[2]
             for i in range(0, length):
-                self.map[src] = des
+                self.map[src + i] = des + i
 
 class LightTempMap:
     def __init__(self, data):
@@ -73,7 +73,7 @@ class LightTempMap:
         for each_line_data in self.data:
             des, src, length = each_line_data[0], each_line_data[1], each_line_data[2]
             for i in range(0, length):
-                self.map[src] = des
+                self.map[src + i] = des + i
 
 class TempHumidMap:
     def __init__(self, data):
@@ -86,7 +86,7 @@ class TempHumidMap:
         for each_line_data in self.data:
             des, src, length = each_line_data[0], each_line_data[1], each_line_data[2]
             for i in range(0, length):
-                self.map[src] = des
+                self.map[src + i] = des + i
 
 class HumidLocationMap:
     def __init__(self, data):
@@ -99,7 +99,7 @@ class HumidLocationMap:
         for each_line_data in self.data:
             des, src, length = each_line_data[0], each_line_data[1], each_line_data[2]
             for i in range(0, length):
-                self.map[src] = des
+                self.map[src + i] = des + i
 
 class AnalyseData:
     def __init__(self, all_data):
@@ -149,7 +149,7 @@ class AnalyseData:
                 temp = light
             # find humid from temp values
             if temp in self.temp_to_humid:
-                humid = self.temp_to_humid[light]
+                humid = self.temp_to_humid[temp]
             else:
                 humid = temp
             # find location from humid values
